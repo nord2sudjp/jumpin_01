@@ -120,6 +120,9 @@ class _MainPageState extends State<MainPage> {
                   return CupertinoPageRoute(
                       builder: (_) => MonthlyRoutesOverviewScreen(),
                       settings: settings);
+                case MonthlyRouteScreen.routeName:
+                  return CupertinoPageRoute(
+                      builder: (_) => MonthlyRouteScreen(), settings: settings);
               }
             });
             break;

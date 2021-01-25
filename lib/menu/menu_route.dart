@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import '../models/year_month.dart';
 import '../widgets/montly_header.dart';
-import '../models/monthly_master.dart';
+import '../models/master_monthly.dart';
 
 class MenuRoute extends StatefulWidget {
   static const routeName = './route-view';
@@ -12,7 +12,7 @@ class MenuRoute extends StatefulWidget {
 
 class _MenuRouteState extends State<MenuRoute>
     with SingleTickerProviderStateMixin {
-  final List<YearMonth> monthlymaster = MonthlyMaster.items;
+  final List<YearMonth> monthlymaster = MasterMonthly.items;
 
   TabController _tabController;
 

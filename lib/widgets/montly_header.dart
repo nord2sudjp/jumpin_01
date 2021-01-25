@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/monthly_master.dart';
+import '../models/master_monthly.dart';
 import '../models/year_month.dart';
 import '../screen/monthly_routes_overview_screen.dart';
 import '../next_screen.dart';
@@ -7,13 +7,13 @@ import '../next_screen.dart';
 class MonthlyHeader extends StatelessWidget {
   //final int year;
   //final int month;
-  final List<YearMonth> monthlymaster = MonthlyMaster.items;
+  final List<YearMonth> mastermonthly = MasterMonthly.items;
 
   MonthlyHeader();
 
   @override
   Widget build(BuildContext context) {
-    print(monthlymaster.toString());
+    print(mastermonthly.toString());
     return ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
@@ -24,22 +24,22 @@ class MonthlyHeader extends StatelessWidget {
                 Navigator.of(context).pushNamed(
                     MonthlyRoutesOverviewScreen.routeName,
                     arguments: {
-                      "year": monthlymaster[index].year,
-                      "month": monthlymaster[index].month
+                      "year": mastermonthly[index].year,
+                      "month": mastermonthly[index].month
                     }
                     // MaterialPageRoute<NextScreen>(
                     //     builder: (context) => NextScreen()),
                     )
               },
               leading: Icon(Icons.folder_open_outlined),
-              title: Text(monthlymaster[index].year.toString() +
+              title: Text(mastermonthly[index].year.toString() +
                   "年" +
-                  monthlymaster[index].month.toString() +
+                  mastermonthly[index].month.toString() +
                   "月"),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
           );
         },
-        itemCount: monthlymaster.length);
+        itemCount: mastermonthly.length);
   }
 }

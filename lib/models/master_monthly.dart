@@ -1,6 +1,6 @@
-import './year_month.dart';
+import 'year_month.dart';
 
-class MonthlyMaster {
+class MasterMonthly {
   static List<YearMonth> _items = [
     YearMonth(year: 2019, month: 11),
     YearMonth(year: 2019, month: 12),

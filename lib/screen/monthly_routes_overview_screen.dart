@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/route_icon.dart';
+import '../dummy_data.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
@@ -49,9 +50,19 @@ class MonthlyRoutesOverviewScreen extends StatelessWidget {
           ]),
       body: GridView(
         padding: EdgeInsets.all(16),
-        children: List.generate(100, (index) {
-          return RouteIcon(year, month, index, 4, 'Maka');
-        }),
+        children: DUMMY_MONTHLY_ROUTES
+            .where((mr) {
+              if (this.year == mr.year && this.month == mr.month) {
+                return true;
+              }
+              return false;
+            })
+            .map((mr) =>
+                RouteIcon(mr.year, mr.month, mr.id, mr.grade, mr.creator))
+            .toList(),
+        //children: List.generate(100, (index) {
+        //  return RouteIcon(year, month, index, 4, 'Maka');
+        //}),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           crossAxisSpacing: 16.0,
