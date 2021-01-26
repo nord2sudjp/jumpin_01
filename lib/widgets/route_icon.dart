@@ -12,6 +12,12 @@ class RouteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String t;
+    if (this.grade == -1) {
+      t = '?';
+    } else {
+      t = this.grade.toString();
+    }
     return Card(
         color: Colors.orange,
         child: Center(
@@ -31,7 +37,7 @@ class RouteIcon extends StatelessWidget {
                       children: <Widget>[
                         Text(this.route_id.toString()),
                         //Expanded(child: Container(color: Colors.blue)),
-                        Text(this.grade.toString() + "級")
+                        Text(t + "級")
                       ],
                     ),
                   ),
