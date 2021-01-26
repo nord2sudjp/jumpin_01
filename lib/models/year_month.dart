@@ -7,4 +7,8 @@ class YearMonth {
     @required this.year,
     @required this.month,
   });
+
+  int get id {
+    return year * 100 + month;
+  }
 }

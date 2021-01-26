@@ -17,7 +17,7 @@ class MonthlyHeader extends StatelessWidget {
     return ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
-            margin: EdgeInsets.symmetric(vertical: 4, horizontal: 5),
+            margin: EdgeInsets.symmetric(vertical: 1, horizontal: 5),
             elevation: 1,
             child: ListTile(
               onTap: () => {

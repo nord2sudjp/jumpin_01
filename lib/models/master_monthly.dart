@@ -22,6 +22,7 @@ class MasterMonthly {
     // if (_showFavoritesOnly) {
     //   return _items.where((prodItem) => prodItem.isFavorite).toList();
     // }
+    _items.sort((a, b) => b.id.compareTo(a.id));
     return [..._items];
   }
 }
