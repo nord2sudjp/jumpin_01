@@ -37,25 +37,21 @@ class _MenuRouteState extends State<MenuRoute>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: Container(
+        centerTitle: true,
+        bottom: ColoredTabBar(
           color: Colors.white,
-          child: SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: TabBar(
-                    labelColor: Colors.red,
-                    labelStyle: TextStyle(fontWeight: FontWeight.bold),
-                    indicatorWeight: 4,
-                    indicatorColor: Colors.red[600],
-                    controller: _tabController,
-                    tabs: _tab,
-                  ),
-                ),
-              ],
-            ),
+          tabBar: TabBar(
+            labelColor: Colors.red,
+            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            indicatorWeight: 4,
+            indicatorColor: Colors.red[600],
+            controller: _tabController,
+            tabs: _tab,
           ),
+        ),
+        title: Text(
+          "課題一覧",
+          textAlign: TextAlign.center,
         ),
       ),
       body: TabBarView(controller: _tabController, children: <Widget>[
@@ -87,4 +83,22 @@ class TabPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ColoredTabBar extends StatelessWidget implements PreferredSizeWidget {
+  final PreferredSizeWidget tabBar;
+  final Color color;
+
+  ColoredTabBar({@required this.tabBar, @required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Ink(
+      color: color,
+      child: tabBar,
+    );
+  }
+
+  @override
+  Size get preferredSize => tabBar.preferredSize;
 }
