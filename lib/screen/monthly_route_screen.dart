@@ -46,7 +46,7 @@ class MonthlyRouteScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                       Text(
-                        "難易度:非公開",
+                        "難易度:" + mm.gradetostring + '級',
                         style: TextStyle(color: Colors.white),
                       ),
                     ],

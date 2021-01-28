@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screen/monthly_route_screen.dart';
+import '../models/monthly_route.dart';
 
 class RouteIcon extends StatelessWidget {
   final int year;
@@ -12,12 +13,6 @@ class RouteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String t;
-    if (this.grade == -1) {
-      t = '?';
-    } else {
-      t = this.grade.toString();
-    }
     return Card(
         color: Colors.orange,
         child: Center(
@@ -37,7 +32,7 @@ class RouteIcon extends StatelessWidget {
                       children: <Widget>[
                         Text(this.route_id.toString()),
                         //Expanded(child: Container(color: Colors.blue)),
-                        Text(t + "級")
+                        Text(MonthlyRoute.gradetostringp(this.grade) + "級")
                       ],
                     ),
                   ),

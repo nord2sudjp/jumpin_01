@@ -12,4 +12,24 @@ class MonthlyRoute {
       @required this.id,
       @required this.grade,
       @required this.creator});
+
+  static String gradetostringp(int p) {
+    String t;
+    if (p == -1) {
+      t = '?';
+    } else {
+      t = p.toString();
+    }
+    return t;
+  }
+
+  String get gradetostring {
+    String t;
+    if (this.grade == -1) {
+      t = '?';
+    } else {
+      t = this.grade.toString();
+    }
+    return t;
+  }
 }
