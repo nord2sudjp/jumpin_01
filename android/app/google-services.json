@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "770143731528",
+    "firebase_url": "https://jumpin-001-default-rtdb.firebaseio.com",
+    "project_id": "jumpin-001",
+    "storage_bucket": "jumpin-001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770143731528:android:3e6535a881a25c2f2b7d7d",
+        "android_client_info": {
+          "package_name": "com.n2sj.jumpin01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770143731528-kktvc6hh9o0adr4ddnc2n9r6rrlpvf80.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQbOlBAYFvb2XVtHIaLQgBeSNauSUUXmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770143731528-kktvc6hh9o0adr4ddnc2n9r6rrlpvf80.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
