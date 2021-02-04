@@ -13,7 +13,7 @@ class MonthlyHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(mastermonthly.toString());
+    //print(mastermonthly.toString());
     return ListView.builder(
         itemBuilder: (ctx, index) {
           return Card(
