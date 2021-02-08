@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../models/year_month.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-class MasterMonthly with ChangeNotifier {
+class YearMonths with ChangeNotifier {
   static List<YearMonth> _items = [
     YearMonth(year: 2019, month: 11),
     YearMonth(year: 2019, month: 12),
