@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import '../models/year_month.dart';
 import 'package:firebase_database/firebase_database.dart';
 
@@ -44,8 +43,10 @@ class YearMonths with ChangeNotifier {
             .add(YearMonth(year: data['year'], month: data['month']));
       });
       _items = loadedYearMonth;
+      notifyListeners();
     } catch (error) {
-      throw (error);
+      print("fetchYearMonth" + error.toString());
+      //throw (error);
     }
     ;
   }

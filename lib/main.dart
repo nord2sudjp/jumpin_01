@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './menu/menu_homepage.dart';
 import './menu/menu_route.dart';
 import './next_screen.dart';
 import './search_screen.dart';
 import './screen/monthly_route_screen.dart';
 import './screen/monthly_routes_overview_screen.dart';
+import './providers/year_months.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,41 +42,44 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Jump In!',
-        theme: ThemeData(
-          primarySwatch: MyApp.mcgpalette0,
-          accentColor: MyApp.mcgpalette0Accent,
-          fontFamily: 'QuickSand',
-          textTheme: ThemeData.light().textTheme.copyWith(
-                headline6: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-                button: TextStyle(color: Colors.white),
-              ),
-          appBarTheme: AppBarTheme(
+    return ChangeNotifierProvider(
+      builder: (ctx) => YearMonths(),
+      child: MaterialApp(
+          title: 'Jump In!',
+          theme: ThemeData(
+            primarySwatch: MyApp.mcgpalette0,
+            accentColor: MyApp.mcgpalette0Accent,
+            fontFamily: 'QuickSand',
             textTheme: ThemeData.light().textTheme.copyWith(
-                  headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 20),
+                  headline6: TextStyle(
+                      fontFamily: 'OpenSans',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                  button: TextStyle(color: Colors.white),
                 ),
+            appBarTheme: AppBarTheme(
+              textTheme: ThemeData.light().textTheme.copyWith(
+                    headline6: TextStyle(fontFamily: 'OpenSans', fontSize: 20),
+                  ),
+            ),
           ),
-        ),
-        home: MainPage(),
-        onGenerateRoute: (RouteSettings settings) {
-          switch (settings.name) {
-            case NextScreen.routeName:
-              return CupertinoPageRoute(
-                  builder: (_) => NextScreen(), settings: settings);
+          home: MainPage(),
+          onGenerateRoute: (RouteSettings settings) {
+            switch (settings.name) {
+              case NextScreen.routeName:
+                return CupertinoPageRoute(
+                    builder: (_) => NextScreen(), settings: settings);
+            }
           }
-        }
-        // routes: {
-        //   NextScreen.routeName: (context) => NextScreen(),
-        //   MenuHomepage.routeName: (ctr) => MenuHomepage(),
-        //   MonthlyRoutesOverviewScreen.routeName: (ctr) =>
-        //       MonthlyRoutesOverviewScreen(),
-        //   MonthlyRouteScreen.routeName: (ctr) => MonthlyRouteScreen(),
-        // },
-        );
+          // routes: {
+          //   NextScreen.routeName: (context) => NextScreen(),
+          //   MenuHomepage.routeName: (ctr) => MenuHomepage(),
+          //   MonthlyRoutesOverviewScreen.routeName: (ctr) =>
+          //       MonthlyRoutesOverviewScreen(),
+          //   MonthlyRouteScreen.routeName: (ctr) => MonthlyRouteScreen(),
+          // },
+          ),
+    );
   }
 }
 
