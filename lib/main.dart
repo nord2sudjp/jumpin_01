@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      builder: (ctx) => YearMonths(),
+      create: (ctx) => YearMonths(),
       child: MaterialApp(
           title: 'Jump In!',
           theme: ThemeData(
