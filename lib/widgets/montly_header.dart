@@ -17,7 +17,7 @@ class MonthlyHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //print(mastermonthly.toString());
-    final YearMonthsData = Provider.of<YearMonths>(context);
+    final YearMonthsData = Provider.of<YearMonths>(context, listen: false);
     final yearmonths = YearMonthsData.items;
 
     return ListView.builder(

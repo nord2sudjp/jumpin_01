@@ -26,6 +26,8 @@ class YearMonths with ChangeNotifier {
 
   Future<void> fetchYearMonth() async {
     try {
+      print("fetchYearMonth" + "Start loading");
+
       final databaseReference = FirebaseDatabase.instance.reference();
       final db = databaseReference.child("yearmonth");
       Map<dynamic, dynamic> extractedData;
@@ -39,10 +41,12 @@ class YearMonths with ChangeNotifier {
       List<YearMonth> loadedYearMonth = [];
 
       extractedData.forEach((id, data) {
+        print(data['year'].toString() + data['month'].toString());
         loadedYearMonth
             .add(YearMonth(year: data['year'], month: data['month']));
       });
       _items = loadedYearMonth;
+      print("fetchYearMonth" + "Data loaded");
       notifyListeners();
     } catch (error) {
       print("fetchYearMonth" + error.toString());

@@ -42,8 +42,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (ctx) => YearMonths(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => YearMonths(),
+        )
+      ],
       child: MaterialApp(
           title: 'Jump In!',
           theme: ThemeData(

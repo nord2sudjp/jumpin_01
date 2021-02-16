@@ -1,0 +1,2 @@
+# main.dartのchange notifierの書き方を調べる
+Provider.Productの戻り値の扱い方が違う
