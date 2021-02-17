@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/master_monthly.dart';
-import '../models/year_month.dart';
-import '../screen/monthly_routes_overview_screen.dart';
-import '../next_screen.dart';
 import './year_month_card.dart';
 import '../providers/year_months.dart';
 import 'package:provider/provider.dart';
@@ -34,8 +30,6 @@ class MonthlyHeader extends StatelessWidget {
             );
           } else {
             return Consumer<YearMonths>(builder: (ctx, yearmonthsData, child) {
-              print("Consumer Notified");
-              print(yearmonthsData.items.length);
               return ListView.builder(
                   itemBuilder: (ctx, index) {
                     return YearMonthCard(yearmonthsData.items[index].year,

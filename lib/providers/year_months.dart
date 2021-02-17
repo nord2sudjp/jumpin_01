@@ -41,7 +41,7 @@ class YearMonths with ChangeNotifier {
       List<YearMonth> loadedYearMonth = [];
 
       extractedData.forEach((id, data) {
-        print(data['year'].toString() + data['month'].toString());
+        //print(data['year'].toString() + data['month'].toString());
         loadedYearMonth
             .add(YearMonth(year: data['year'], month: data['month']));
       });
