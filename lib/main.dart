@@ -8,6 +8,7 @@ import './search_screen.dart';
 import './screen/monthly_route_screen.dart';
 import './screen/monthly_routes_overview_screen.dart';
 import './providers/year_months.dart';
+import './providers/monthly_routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,7 +47,8 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider(
           create: (ctx) => YearMonths(),
-        )
+        ),
+        ChangeNotifierProvider(create: (ctx) => MonthlyRoutes())
       ],
       child: MaterialApp(
           title: 'Jump In!',
