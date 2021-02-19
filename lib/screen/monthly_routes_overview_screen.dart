@@ -13,7 +13,7 @@ class MonthlyRoutesOverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map arg = ModalRoute.of(context).settings.arguments;
-    print(arg['year'] + arg['month']);
+    //print(arg['year'] + arg['month']);
     this.year = arg['year'];
     this.month = arg['month'];
 
@@ -52,17 +52,15 @@ class MonthlyRoutesOverviewScreen extends StatelessWidget {
         padding: EdgeInsets.all(16),
         children: DUMMY_MONTHLY_ROUTES
             .where((mr) {
-              if (this.year == mr.year && this.month == mr.month) {
-                return true;
-              }
-              return false;
+              return this.year == mr.year && this.month == mr.month;
+              //if (this.year == mr.year && this.month == mr.month) {
+              //  return true;
+              //}
+              //return false;
             })
             .map((mr) =>
                 RouteIcon(mr.year, mr.month, mr.id, mr.grade, mr.creator))
             .toList(),
-        //children: List.generate(100, (index) {
-        //  return RouteIcon(year, month, index, 4, 'Maka');
-        //}),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           crossAxisSpacing: 16.0,
