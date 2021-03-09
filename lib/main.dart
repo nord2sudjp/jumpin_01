@@ -9,8 +9,12 @@ import './screen/monthly_route_screen.dart';
 import './screen/monthly_routes_overview_screen.dart';
 import './providers/year_months.dart';
 import './providers/monthly_routes.dart';
+import 'dart:io';
 
-void main() => runApp(MyApp());
+void main() {
+  HttpOverrides.global = new MyHttpOverrides();
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   static const MaterialColor mcgpalette0 =
@@ -154,5 +158,14 @@ class _MainPageState extends State<MainPage> {
         }
       },
     );
+  }
+}
+
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
   }
 }

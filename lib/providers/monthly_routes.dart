@@ -11,12 +11,16 @@ class MonthlyRoutes with ChangeNotifier {
 
   Future<void> fetchMonthlyRoute() async {
     try {
-      print("fetchMonthlyRoute" + "Start loading");
+      print("fetchMonthlyRoute:" + "Start loading-1");
 
       final databaseReference = FirebaseDatabase.instance.reference();
       final db = databaseReference.child("monthly_route");
+      print("fetchMonthlyRoute:" + "Ref created");
+
       Map<dynamic, dynamic> extractedData;
       DataSnapshot snapshot = await db.once();
+      print("fetchMonthlyRoute:" + "Once completd");
+
       extractedData = snapshot.value;
       // db.once().then((DataSnapshot snapshot) {
       //   extractedData = snapshot.value;
