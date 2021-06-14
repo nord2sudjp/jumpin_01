@@ -1,2 +1,15 @@
+# 2021/5/7
+課題を投稿する
+
+final databaseReference1 = FirebaseDatabase.instance.reference();
+//final db1 = databaseReference1.child("monthly_route");
+databaseReference1.child("data").child("message1").setData("Goodbye");
+// dbRef = database.getReference();
+// dbRef.child("test").child("data").child("message1").setValue("Goodbye"); 
+
+# 2021/3/30
+マンスリー課題の項目を最新からにソート
+
+
 # main.dartのchange notifierの書き方を調べる
 Provider.Productの戻り値の扱い方が違う

@@ -8,3 +8,6 @@ const DUMMY_MONTHLY_ROUTES = const [
   MonthlyRoute(year: 2020, month: 12, id: 2, grade: -1, creator: 'Shinano'),
   MonthlyRoute(year: 2020, month: 10, id: 1, grade: -1, creator: 'Shinano'),
 ];
+
+// dbRef = database.getReference();
+// dbRef.child("test").child("data").child("message1").setValue("Goodbye");
