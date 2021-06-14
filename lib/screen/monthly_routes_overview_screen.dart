@@ -67,12 +67,17 @@ class MonthlyRoutesOverviewScreen extends StatelessWidget {
           mainAxisSpacing: 16.0,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        child: const Icon(Icons.navigation),
-        backgroundColor: Colors.green,
+      floatingActionButton: Container(
+        margin: EdgeInsets.only(bottom: 50.0),
+        child: FloatingActionButton(
+          onPressed: () {
+            // Add your onPressed code here!
+          },
+          child: const Icon(Icons.add),
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.red,
+          elevation: 15,
+        ),
       ),
     );
   }
