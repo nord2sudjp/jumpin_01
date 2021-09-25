@@ -6,12 +6,15 @@ class MonthlyRoute {
   final int id;
   final int grade;
   final String creator;
+  final String topo;
+
   const MonthlyRoute(
       {@required this.year,
       @required this.month,
       @required this.id,
       @required this.grade,
-      @required this.creator});
+      @required this.creator,
+      @required this.topo});
 
   static String gradetostringp(int p) {
     String t;

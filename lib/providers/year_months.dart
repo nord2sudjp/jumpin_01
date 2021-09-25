@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import '../models/year_month.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/http_exception.dart';
@@ -12,6 +15,11 @@ class YearMonths with ChangeNotifier {
   static List<YearMonth> _items = [];
 
   List<YearMonth> get items {
+    _items.sort((a, b) {
+      int cmp = b.year.compareTo(a.year);
+      if (cmp != 0) return cmp;
+      return (b.month).compareTo(a.month);
+    });
     return [..._items];
   }
 
@@ -41,7 +49,7 @@ class YearMonths with ChangeNotifier {
     }
   }
 
-  Future<void> fetchYearMonth() async {
+  Future<void> fetchYearMonth_2() async {
     try {
       print("fetchYearMonth:" + "Start loading");
 
@@ -70,6 +78,5 @@ class YearMonths with ChangeNotifier {
       print("fetchYearMonth" + error.toString());
       //throw (error);
     }
-    ;
   }
 }

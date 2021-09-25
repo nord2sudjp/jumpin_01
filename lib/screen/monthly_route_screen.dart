@@ -62,7 +62,7 @@ class MonthlyRouteScreen extends StatelessWidget {
             Expanded(
               child: FittedBox(
                 fit: BoxFit.contain, // otherwise the logo will be tiny
-                child: Image.network('https://picsum.photos/200/300'),
+                child: Image.network(mm.topo),
                 //child: const FlutterLogo(),
               ),
             ),

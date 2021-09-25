@@ -18,7 +18,7 @@ class MonthlyHeader extends StatelessWidget {
 
     return FutureBuilder(
       future:
-          Provider.of<YearMonths>(context, listen: false).fetchYearMonth_1(),
+          Provider.of<YearMonths>(context, listen: false).fetchYearMonth_2(),
       builder: (ctx, dataSnapshot) {
         if (dataSnapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
